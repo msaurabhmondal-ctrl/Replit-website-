@@ -1,0 +1,1441 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Saurabh Mondal â€” Social Media Manager | AI Video & Content Creator | Reels & Design</title>
+  <meta name="description" content="Saurabh Mondal â€” Social Media Manager | AI Video & Content Creator | Reels & Design. Freelance services starting at .00/hr. Content that grabs attention and drives real business growth.">
+  <meta name="keywords" content="Social Media Manager, AI Video Creator, Reels, TikTok, Content Strategy, Saurabh Mondal, Video Editing, Upwork Freelancer">
+  <link rel="icon" type="image/png" href="images/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    /* Custom enhancements for video portfolio & niche display */
+    .niche-tab {
+      transition: all 0.25s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .niche-tab.active {
+      background: rgba(119, 231, 242, 0.15) !important;
+      border-color: rgba(119, 231, 242, 0.75) !important;
+      color: #9cf5fa !important;
+      box-shadow: 0 0 16px rgba(119, 231, 242, 0.2);
+    }
+    .portfolio-item {
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(119, 231, 242, 0.45);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(119, 231, 242, 0.1);
+    }
+    .video-thumb-container {
+      position: relative;
+      background: #030814;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+    }
+    .video-thumb-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover .video-thumb-container video {
+      transform: scale(1.04);
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-card {
+      background: #091528;
+      border: 1px solid rgba(136, 175, 232, 0.22);
+      border-radius: 20px;
+      max-width: 940px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 40px rgba(119, 231, 242, 0.12);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+    .profile-glow {
+      box-shadow: 0 0 45px rgba(59, 130, 246, 0.25), 0 0 25px rgba(119, 231, 242, 0.35);
+    }
+    .badge-pulse {
+      animation: pulseGlow 2.2s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 8px #77e7f1; }
+      50% { box-shadow: 0 0 18px #77e7f1; }
+    }
+  </style>
+</head>
+<body class="bg-[#070d1b] text-[#eff4fc] antialiased selection:bg-[#77e7f2] selection:text-[#070d1b]">
+  <div id="root" class="min-h-screen">
+    <div class="noise min-h-[100dvh] overflow-hidden bg-[#070d1b] text-[#eff4fc]">
+      
+      <!-- ==================== HEADER NAVIGATION ==================== -->
+      <header class="fixed inset-x-0 top-0 z-40 px-3 pt-3 md:pt-5">
+        <nav class="nav-shell shell mx-auto flex h-[58px] max-w-[1140px] items-center justify-between rounded-full px-4 md:h-[66px] md:px-6" aria-label="Main navigation">
+          
+          <!-- Logo & Avatar -->
+          <a href="#top" class="display flex shrink-0 items-center gap-3 text-[12px] font-bold tracking-[.12em] text-[#eff5ff]" aria-label="Saurabh Mondal, home">
+            <div class="relative h-9 w-9 overflow-hidden rounded-full border border-cyan-200/40 bg-blue-500/20 shadow-[0_0_12px_rgba(119,231,242,0.35)]">
+              <img src="images/profile.png" alt="Saurabh Mondal" class="h-full w-full object-cover">
+            </div>
+            <div class="flex flex-col">
+              <span class="leading-none text-[13px]">SAURABH MONDAL<span class="text-[#78e8f2]">.</span></span>
+              <span class="font-mono text-[9px] font-normal tracking-[0.15em] text-[#849bbb]">SOCIAL & AI CREATOR</span>
+            </div>
+          </a>
+
+          <!-- Rate Badge (Desktop) -->
+          <div class="hidden xl:flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3.5 py-1 text-[11px] font-medium text-emerald-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+            <span>.00/hr Â· Available for Hire</span>
+          </div>
+
+          <!-- Nav Links -->
+          <div class="hidden items-center gap-6 text-[11px] font-semibold lg:gap-7 md:flex">
+            <a class="nav-link hover:text-[#78e8f2]" href="#work">Portfolio by Niche</a>
+            <a class="nav-link hover:text-[#78e8f2]" href="#services">What I Do</a>
+            <a class="nav-link hover:text-[#78e8f2]" href="#why-me">Strategy</a>
+            <a class="nav-link hover:text-[#78e8f2]" href="#about">About</a>
+            <a class="nav-link hover:text-[#78e8f2]" href="#contact">Contact</a>
+            
+            <a class="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2 text-[#9cf5fa] transition hover:border-cyan-300/60 hover:bg-cyan-400/20" href="#contact">
+              Hire Me (/hr) <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right ml-1 inline" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-[#dce7f7] md:hidden" type="button" aria-label="Open navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden mx-auto mt-2 max-w-[1140px] rounded-2xl border border-white/10 bg-[#091528]/95 p-5 backdrop-blur-xl md:hidden">
+          <div class="flex flex-col gap-3 font-semibold text-[13px]">
+            <a class="py-2 border-b border-white/5 hover:text-[#78e8f2]" href="#work">Portfolio by Niche</a>
+            <a class="py-2 border-b border-white/5 hover:text-[#78e8f2]" href="#services">What I Do</a>
+            <a class="py-2 border-b border-white/5 hover:text-[#78e8f2]" href="#why-me">Strategy & Clients</a>
+            <a class="py-2 border-b border-white/5 hover:text-[#78e8f2]" href="#about">About Saurabh</a>
+            <a class="py-2 hover:text-[#78e8f2]" href="#contact">Contact & Hire (/hr)</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================== HERO SECTION ==================== -->
+      <main>
+        <section id="top" class="hero-section relative flex min-h-[780px] items-center justify-center overflow-hidden pt-[100px] md:min-h-[min(940px,100svh)] md:pt-[110px]">
+          <div class="hero-grid absolute inset-0 opacity-40"></div>
+          <div class="hero-orb absolute inset-0"></div>
+          <div class="hero-lightstreaks absolute inset-0"></div>
+          
+          <!-- Background Orb Art -->
+          <div class="hero-art absolute left-1/2 top-[48%] z-0 h-[min(88vw,690px)] w-[min(88vw,690px)] -translate-x-1/2 -translate-y-1/2 md:top-[48%] md:h-[min(78vw,760px)] md:w-[min(78vw,760px)] pointer-events-none opacity-60" aria-hidden="true">
+            <img alt="" class="hero-energy-image absolute inset-0 h-full w-full object-contain" src="images/electric-energy-orb.png">
+          </div>
+
+          <div class="shell relative z-10 flex justify-center pb-20 pt-10">
+            <div class="hero-copy mx-auto max-w-[920px] text-center">
+              
+              <!-- Availability Pill -->
+              <div class="availability-pill mx-auto inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-[#0a1425]/80 px-4 py-2 font-mono text-[9px] font-semibold tracking-[.18em] text-[#b4c3d8] backdrop-blur-md md:text-[10px]">
+                <span class="h-2 w-2 rounded-full bg-[#77e7f1] badge-pulse"></span>
+                <span>OPEN TO CLIENTS Â· .00/HR Â· FREELANCE SOCIAL & AI CREATOR</span>
+              </div>
+
+              <!-- Main Title -->
+              <h1 class="display mt-7 text-[clamp(2.4rem,7.5vw,5.6rem)] font-normal leading-[1.02] tracking-[-.06em] text-[#f3f7fd] drop-shadow-[0_2px_22px_rgba(3,9,20,.75)]">
+                Content that grabs attention.<br>
+                <span class="bg-gradient-to-r from-[#8fb3ff] via-[#70d9ff] to-[#a7f4f5] bg-clip-text text-transparent">Built to grow your brand.</span>
+              </h1>
+
+              <!-- Career Subheadline -->
+              <p class="display mx-auto mt-6 max-w-[760px] text-[clamp(1.05rem,2vw,1.35rem)] font-medium leading-[1.5] tracking-[-.02em] text-[#9df0f4]">
+                Social Media Manager &nbsp;|&nbsp; AI Video & Content Creator &nbsp;|&nbsp; Reels & Design
+              </p>
+
+              <!-- Core Hook & Pitch -->
+              <p class="mx-auto mt-4 max-w-[720px] text-[13px] leading-relaxed text-[#c6d5e8] md:text-[15px]">
+                <strong class="text-white font-semibold">Want content that grabs attention, keeps people watching and gives your brand a reason to be remembered?</strong><br>
+                I help brands grow with strategic social media management, engaging short-form videos, and creative AI-powered content. From content planning to publishing and performance tracking, I turn social feeds into real marketing assets.
+              </p>
+
+              <!-- Rate & Value Highlight Badge -->
+              <div class="mt-6 mx-auto inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-[#09182f]/70 px-5 py-2.5 backdrop-blur-md">
+                <span class="text-[12px] font-bold text-white font-mono bg-cyan-400/20 px-2 py-0.5 rounded text-[#7ce6ef]">.00/hr</span>
+                <span class="text-[12px] text-[#91a3be]">High-retention hooks Â· No random posting Â· Fast turnaround</span>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="mt-8 flex flex-wrap justify-center gap-3.5">
+                <a href="#work" class="button-primary shadow-[0_0_30px_rgba(40,96,219,0.4)]">
+                  EXPLORE WORK BY NICHE <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+                <a href="#contact" class="button-quiet hover:border-[#77e7f2]/60">
+                  HIRE ME FOR .00/HR <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                </a>
+              </div>
+
+              <!-- Ticker Capabilities -->
+              <div class="hero-proof mx-auto mt-9 flex max-w-[780px] flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[9px] font-medium tracking-[.13em] text-[#9baac0] md:text-[10px]">
+                <span>VIRAL REELS</span><i></i>
+                <span>AI VIDEO & AVATARS</span><i></i>
+                <span>SOCIAL GRAPHICS</span><i></i>
+                <span>COPYWRITING</span><i></i>
+                <span>COMMUNITY MGMT</span><i></i>
+                <span>REPURPOSING</span>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== WHAT I DO (SERVICES) ==================== -->
+        <section id="services" class="shell py-20 md:py-28 border-t border-white/[.06]">
+          <div class="mb-12 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
+            <div>
+              <p class="eyebrow">WHAT I BRING TO THE TABLE Â· .00/HR</p>
+              <h2 class="section-title mt-4 max-w-[720px]">
+                Complete social & video execution.<br>
+                <span class="text-[#8493aa]">Every piece has a clear purpose.</span>
+              </h2>
+            </div>
+            <p class="max-w-[360px] pb-1 text-[13px] leading-6 text-[#94a3b8]">
+              From content planning to publishing and performance tracking, I design content to attract attention, build trust, and support your business goals.
+            </p>
+          </div>
+
+          <!-- 9 Services Grid -->
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            
+            <!-- Service 1 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">01 Â· VIDEO</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Short-Form Content</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Reels, TikToks, Shorts, strong first-3-second hooks, scripting, dynamic pacing, and feed-ready editing.</p>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">02 Â· AI</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">AI Content Creation</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">AI videos, hyper-realistic product visuals, digital avatars, synthetic storytelling, and creative AI ads.</p>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">03 Â· DESIGN</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Social Media Graphics</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Branded promotional posts, educational carousels, mockups, banners, and high-CTR visual assets.</p>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">04 Â· COPY</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Copywriting & Hooks</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">High-converting captions, viral video opening hooks, storytelling, and clear call-to-actions that drive clicks.</p>
+            </article>
+
+            <!-- Service 5 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">05 Â· STRATEGY</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Content Strategy</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Structured monthly content calendars, audience persona profiling, competitor research, and trend analysis.</p>
+            </article>
+
+            <!-- Service 6 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">06 Â· CHANNELS</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Platform Management</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">End-to-end management across Instagram, TikTok, YouTube Shorts, Facebook, and X (Twitter) with consistent timing.</p>
+            </article>
+
+            <!-- Service 7 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">07 Â· ENGAGE</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Community Management</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Replying to comments, managing DMs, active audience engagement, and nurturing leads into customers.</p>
+            </article>
+
+            <!-- Service 8 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">08 Â· MULTIPLY</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Content Repurposing</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Turn 1 long-form podcast or video into 5-10 platform-ready micro-clips, quotes, and swipeable carousels.</p>
+            </article>
+
+            <!-- Service 9 -->
+            <article class="service-card group flex min-h-[210px] flex-col rounded-2xl p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-[.15em] text-[#6f819c]">09 Â· DATA</span>
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/10 text-[#75dce9]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                </div>
+              </div>
+              <h3 class="display mt-6 text-[18px] font-semibold text-[#e8eff9]">Analytics & Growth</h3>
+              <p class="mt-2.5 text-[12px] leading-relaxed text-[#94a4b8]">Tracking retention rates, impressions, and conversions. Iterating hooks based on real performance numbers.</p>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================== WHO I WORK WITH & STRATEGY ==================== -->
+        <section id="why-me" class="border-y border-white/[.06] bg-[#091428] py-20 md:py-28">
+          <div class="shell">
+            <div class="max-w-[780px]">
+              <p class="eyebrow">WHO I WORK WITH & CLIENT PHILOSOPHY</p>
+              <h2 class="section-title mt-4">
+                Content with a clear purpose,<br>
+                <span class="text-[#72e7f2]">not just random posting.</span>
+              </h2>
+              <p class="mt-5 text-[14px] leading-7 text-[#b0c0d8]">
+                I take the time to understand your brand, audience, and goals so every piece of content has a clear role in driving your business forward. I work with brands, businesses, creators, and agencies across different industries:
+              </p>
+            </div>
+
+            <!-- 4 Audience Pillars -->
+            <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-2xl border border-white/10 bg-[#070f20]/80 p-6">
+                <div class="text-[26px]">ðŸš€</div>
+                <h3 class="mt-4 text-[16px] font-bold text-white">Startups & Businesses</h3>
+                <p class="mt-2 text-[12px] leading-relaxed text-[#8ca0be]">Turn initial curiosity into active buyers with clean brand narratives and scalable social traction.</p>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-[#070f20]/80 p-6">
+                <div class="text-[26px]">ðŸ›ï¸</div>
+                <h3 class="mt-4 text-[16px] font-bold text-white">E-Commerce Brands</h3>
+                <p class="mt-2 text-[12px] leading-relaxed text-[#8ca0be]">Product-focused reels, unboxings, aesthetic showcases, and high-CTR paid ad creative that drive sales.</p>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-[#070f20]/80 p-6">
+                <div class="text-[26px]">ðŸŽ¯</div>
+                <h3 class="mt-4 text-[16px] font-bold text-white">Coaches & Creators</h3>
+                <p class="mt-2 text-[12px] leading-relaxed text-[#8ca0be]">Authority-building talking heads, viral shorts with kinetic subtitles, and carousel funnels that convert viewers.</p>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-[#070f20]/80 p-6">
+                <div class="text-[26px]">ðŸ¢</div>
+                <h3 class="mt-4 text-[16px] font-bold text-white">Agencies & Teams</h3>
+                <p class="mt-2 text-[12px] leading-relaxed text-[#8ca0be]">Reliable white-label video editing and social media management with guaranteed fast delivery.</p>
+              </div>
+            </div>
+
+            <!-- Value Banner -->
+            <div class="mt-10 rounded-2xl border border-cyan-400/20 bg-gradient-to-r from-blue-950/40 via-cyan-950/20 to-blue-950/40 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 class="text-[18px] font-bold text-white">Ready to turn your social media into a real marketing asset?</h3>
+                <p class="mt-1 text-[13px] text-[#9fc0d8]">Available at an accessible freelance rate of <span class="font-bold text-[#74e8f1]">.00/hour</span> or flexible monthly retainers.</p>
+              </div>
+              <a href="#contact" class="button-primary shrink-0">
+                LET'S TALK ABOUT YOUR BRAND <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================== PORTFOLIO BY NICHE ==================== -->
+        <section id="work" class="shell py-20 md:py-28">
+          <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p class="eyebrow">PORTFOLIO Â· ORGANIZED BY NICHE</p>
+              <h2 class="section-title mt-4">
+                Selected work across<br>
+                <span class="text-[#7ce6ef]">every high-growth niche.</span>
+              </h2>
+              <p class="mt-3 max-w-[620px] text-[13px] leading-6 text-[#91a3bd]">
+                Real short-form video reels, AI ads, and social media mockups tailored for specific business verticals. Filter by niche below or switch between video and graphic design.
+              </p>
+            </div>
+
+            <!-- View Switcher (All / Video / Design) -->
+            <div class="flex items-center gap-2 rounded-full border border-white/10 bg-[#091629] p-1 text-[11px] font-semibold">
+              <button id="filterTypeAll" class="rounded-full px-4 py-1.5 transition bg-cyan-400/20 text-[#a7f4f4]" type="button">All Media</button>
+              <button id="filterTypeVideos" class="rounded-full px-4 py-1.5 transition text-[#8fa2bc] hover:text-white" type="button">Videos Only</button>
+              <button id="filterTypeDesigns" class="rounded-full px-4 py-1.5 transition text-[#8fa2bc] hover:text-white" type="button">Design & Posters</button>
+            </div>
+          </div>
+
+          <!-- Niche Category Filter Bar -->
+          <div class="mb-8 flex flex-wrap items-center gap-2" role="group" aria-label="Filter portfolio by niche">
+            <button class="niche-tab active rounded-full border border-[#77e7f2]/55 bg-[#77e7f2]/[.11] px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#a7f4f4]" data-niche="all">
+              ðŸŒŸ All Niches
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="ai">
+              ðŸ¤– AI Video & PPC Ads
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="realestate">
+              ðŸ¡ Real Estate & Interior
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="medspa">
+              ðŸ©º Medical & Med Spa
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="fashion">
+              ðŸ›ï¸ E-Commerce & Fashion
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="fitness">
+              ðŸ’ª Fitness & Health
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="food">
+              ðŸ” Food & Dining
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="podcast">
+              ðŸŽ™ï¸ Podcasts & Talking-Head
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="travel">
+              âœˆï¸ Travel & Lifestyle
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="pets">
+              ðŸ¾ Pet Care
+            </button>
+            <button class="niche-tab rounded-full border border-[#9bb7d3]/15 bg-[#091629]/70 px-4 py-2 font-mono text-[10px] font-semibold tracking-[.12em] text-[#8fa2bc] hover:border-[#77e7f2]/35 hover:text-[#c9e8f2]" data-niche="graphics">
+              ðŸŽ¨ Design Mockups
+            </button>
+          </div>
+
+          <!-- Portfolio Grid (Items) -->
+          <div id="portfolioGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+            <!-- 1. AI PPC: Britney -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="ai" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/FINALIZE BRITNEY.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">AI PPC AD</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/FINALIZE BRITNEY.mp4" 
+                  data-title="AI Avatar PPC Ad â€” Britney" 
+                  data-niche="AI Video & Paid Ads" 
+                  data-desc="High-converting AI spokesperson video created with synthetic avatar generation, natural speech cadence, and retention-focused editing.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">AI Avatar PPC Ad â€” Britney</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Direct-response paid social ad with hook-first AI avatar and sound effects.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>AI Â· PPC Funnel</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. AI PPC: Cody -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="ai" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/FINALIZE CODY.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">AI CREATIVE</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/FINALIZE CODY.mp4" 
+                  data-title="AI Spokesperson Video Ad â€” Cody" 
+                  data-niche="AI Video & Paid Ads" 
+                  data-desc="Spokesperson commercial crafted for paid social funnels with AI-driven voice cloning, custom b-roll cutaways, and conversion CTA.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">AI Video Ad â€” Cody Hook</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">B2B & lead generation video utilizing high-retention AI scripting.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>AI Â· Lead Gen</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. AI Full Funnel PPC -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="ai" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/ppc 1 full fill.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">PPC FUNNEL</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/ppc 1 full fill.mp4" 
+                  data-title="Complete PPC Paid Social Ad" 
+                  data-niche="AI Video & Paid Ads" 
+                  data-desc="Complete end-to-end paid video campaign with hook, problem presentation, software walkthrough, and high-urgency call to action.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Full-Funnel Paid Social Ad</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Complete direct-response ad sequence engineered for Facebook & TikTok ads.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>PPC Â· Conversion</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. Real Estate / Interior -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="realestate" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/Interior video.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">REAL ESTATE</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/Interior video.mp4" 
+                  data-title="Luxury Interior & Architecture Reel" 
+                  data-niche="Real Estate & Interior" 
+                  data-desc="Smooth walkthrough video of modern architectural spaces with sound-synced rhythm and high-end color grading.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Modern Interior & Architecture</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Cinematic property tour tailored for Instagram Reels and property buyers.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Property Â· Luxury</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. Medical & Med Spa -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="medspa" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/MED SPA VD1.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">MED SPA</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/MED SPA VD1.mp4" 
+                  data-title="Med Spa & Aesthetic Clinic Reel" 
+                  data-niche="Medical & Med Spa" 
+                  data-desc="Clean, clinical, and aesthetic treatment storytelling built to establish patient trust and drive treatment consultations.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Med Spa Treatment & Aesthetics</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Patient-friendly visual procedure reel with calming rhythm and booking CTA.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Healthcare Â· Med Spa</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. E-Commerce & Luxury Fashion -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="fashion" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/Lux Fashion.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">FASHION & E-COM</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/Lux Fashion.mp4" 
+                  data-title="Luxury Fashion Drop & Collection Reel" 
+                  data-niche="E-Commerce & Fashion" 
+                  data-desc="Fast-paced, high-aesthetic streetwear and luxury collection showcase with quick cuts and trend-aligned sound.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Luxury Fashion & Apparel</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">High-energy product styling video crafted for TikTok and Instagram shop clicks.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>E-Commerce Â· Apparel</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. Fitness & Gym -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="fitness" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/FITNESS.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">FITNESS & COACH</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/FITNESS.mp4" 
+                  data-title="High-Energy Fitness & Workout Reel" 
+                  data-niche="Fitness & Health" 
+                  data-desc="Electrifying athletic workout edit with hard beat drops, motivational flow, and training program promotions.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Fitness & Athletic Motivation</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Dynamic sports workout video tailored for personal trainers and gym brands.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Fitness Â· High Intensity</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8. Food & Dining -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="food" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/food video.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">FOOD & RESTAURANT</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/food video.mp4" 
+                  data-title="Artisanal Food & Restaurant Reel" 
+                  data-niche="Food & Dining" 
+                  data-desc="Mouth-watering culinary presentation with sizzle cuts, rich colors, and local restaurant footfall hooks.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Artisanal Food & Dining</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Sizzle food reel designed to trigger appetite and table bookings.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Culinary Â· Hospitality</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 9. Podcast & Repurposing -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="podcast" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/AU PODCAST 1.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">PODCAST REPURPOSE</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/AU PODCAST 1.mp4" 
+                  data-title="Podcast to Viral Reel Repurposing" 
+                  data-niche="Podcasts & Talking-Head" 
+                  data-desc="Long-form conversation cut down into an engaging vertical short with kinetic animated captions, sound effects, and zoom snaps.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Podcast Repurposed Short</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">High-retention talking-head with animated kinetic captions.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Podcasts Â· Kinetic Type</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 10. Talking-Head & Personal Brand -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="podcast" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/TALKING.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">TALKING HEAD</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/TALKING.mp4" 
+                  data-title="Personal Brand & Authority Video" 
+                  data-niche="Podcasts & Talking-Head" 
+                  data-desc="Founder and coach storytelling video with multi-camera punch-ins, sound design, and clarity-first presentation.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Founder & Coach Talking-Head</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Direct-to-camera storytelling that builds deep trust with viewers.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Personal Brand Â· Authority</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 11. Pets & Animals -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="pets" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/pets video.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">PET CARE</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/pets video.mp4" 
+                  data-title="Pet Care & Viral Animal Story Reel" 
+                  data-niche="Pet Care" 
+                  data-desc="Charming, high-engagement pet product and care video engineered for organic shares and viral reach.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Pet Care & Viral Animals</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">High-share emotional storytelling for pet brands and veterinary services.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Pets Â· Viral Community</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 12. Travel & Vlog: Tokyo City -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="travel" data-type="video">
+              <div class="video-thumb-container">
+                <video src="media/videos/TKOYO CITY.mp4" preload="metadata" muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#091629] via-transparent to-black/30 pointer-events-none"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/80 px-2.5 py-1 font-mono text-[9px] font-semibold text-[#7ce6ef] backdrop-blur-md">TRAVEL & VLOG</span>
+                </div>
+                <button class="play-video-btn absolute inset-0 flex items-center justify-center group" type="button" 
+                  data-video="media/videos/TKOYO CITY.mp4" 
+                  data-title="Tokyo City Aesthetic Vlog" 
+                  data-niche="Travel & Lifestyle" 
+                  data-desc="Cinematic city aesthetic showcase with ambient sound design, smooth speed ramps, and urban energy.">
+                  <span class="grid h-14 w-14 place-items-center rounded-full border border-white/40 bg-[#081628]/70 text-white shadow-xl backdrop-blur-md transition group-hover:scale-110 group-hover:border-[#77e7f2] group-hover:text-[#77e7f2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Tokyo City Aesthetic Reel</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc] line-clamp-2">Immersive travel content and lifestyle cinematography for creators.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-[#7ce6ef]">
+                  <span>Travel Â· Cinematics</span>
+                  <span class="font-mono">â–¶ WATCH REEL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 1: Real Estate Mockup -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="realestate" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/REAL ESTATE 1.png" data-title="Modern Real Estate Branded Post">
+                <img src="media/posters/REAL ESTATE 1.png" alt="Real Estate Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-amber-300">REAL ESTATE DESIGN</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Real Estate Listing Poster</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">High-impact promotional social graphic designed to generate property inquiries.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-amber-300">
+                  <span>Graphic Design</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 2: Fashion Mockup -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="fashion" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/FASHION 1.png" data-title="Luxury Fashion Brand Mockup">
+                <img src="media/posters/FASHION 1.png" alt="Fashion Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-pink-300">FASHION DESIGN</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Luxury Apparel Editorial</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Aesthetic campaign poster mockup built for e-commerce apparel brands.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-pink-300">
+                  <span>E-Commerce Design</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 3: Food & Menu Mockup -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="food" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/FOOD 1.png" data-title="Artisanal Food Social Media Graphic">
+                <img src="media/posters/FOOD 1.png" alt="Food Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-orange-300">FOOD POSTER</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Restaurant Specialty Poster</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Appetite-appealing social promo poster with bold typography and culinary imagery.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-orange-300">
+                  <span>Hospitality Graphic</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 4: Med Spa / Beauty -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="medspa" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/SPA 1.png" data-title="Med Spa & Wellness Graphic">
+                <img src="media/posters/SPA 1.png" alt="Spa Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-emerald-300">SPA & CLINIC</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Spa & Aesthetics Promo</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Minimalist, clean design framed to present premium skin and relaxation treatments.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-emerald-300">
+                  <span>Healthcare Design</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 5: Travel & Tourism -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="travel" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/HAPPY TOUR TRAVEL 1.png" data-title="Happy Tour Travel Campaign">
+                <img src="media/posters/HAPPY TOUR TRAVEL 1.png" alt="Travel Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-cyan-300">TRAVEL & TOURS</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Happy Tour & Travel Graphic</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Engaging vacation package showcase with destination highlights.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-cyan-300">
+                  <span>Travel Marketing</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 6: Fitness & Gym Poster -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="fitness" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/Fit.png" data-title="Fitness Brand Thumbnail & Graphic">
+                <img src="media/posters/Fit.png" alt="Fitness Graphic" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-purple-300">FITNESS GRAPHIC</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Fitness Coaching Thumbnail</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">High-CTR workout visual built to capture immediate scrolling attention.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-purple-300">
+                  <span>Sports & Gym</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 7: Pet Care Design -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="pets" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/pet.png" data-title="Pet Brand Design Mockup">
+                <img src="media/posters/pet.png" alt="Pet Poster" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-yellow-300">PET PRODUCTS</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">Pet Care Product Graphic</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Warm, engaging visual created to showcase pet essentials and foster loyalty.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-yellow-300">
+                  <span>Pet Care Design</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DESIGN POSTER 8: AI & Remote Work Thumbnail -->
+            <article class="portfolio-item rounded-[22px] border border-white/10 bg-[#091629] overflow-hidden flex flex-col" data-niche="ai" data-type="design">
+              <div class="relative aspect-[3/4] overflow-hidden bg-[#030814] cursor-pointer view-poster-btn" data-img="media/posters/Blue and White Modern AI Tools YouTube Thumbnail.png" data-title="AI Tools & YouTube High-CTR Thumbnail">
+                <img src="media/posters/Blue and White Modern AI Tools YouTube Thumbnail.png" alt="AI Tools Thumbnail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                <div class="absolute top-3 left-3">
+                  <span class="rounded-full border border-white/15 bg-[#06101f]/85 px-2.5 py-1 font-mono text-[9px] font-semibold text-blue-300">AI GRAPHIC</span>
+                </div>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-[16px] font-semibold text-white">AI Tools High-CTR Thumbnail</h3>
+                  <p class="mt-1 text-[11px] text-[#93a4bc]">Clean tech graphics designed for high click-through rates across YouTube & social.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-blue-300">
+                  <span>AI Tech Graphic</span>
+                  <span class="font-mono">ðŸ” VIEW DESIGN</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ==================== ABOUT SAURABH ==================== -->
+        <section id="about" class="border-y border-white/[.06] bg-[#0a1426] py-20 md:py-28">
+          <div class="shell grid items-center gap-12 md:grid-cols-[.85fr_1.15fr] md:gap-16">
+            
+            <!-- Real Portrait Photo -->
+            <div class="relative mx-auto w-full max-w-[440px]">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-cyan-300/30 bg-[#0b1830] profile-glow">
+                <img src="images/profile.png" alt="Saurabh Mondal portrait" class="h-full w-full object-cover object-top">
+                <div class="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#070d1b] via-[#070d1b]/40 to-transparent"></div>
+                
+                <!-- Floating Verified Pill -->
+                <div class="absolute top-5 left-5 rounded-full border border-white/15 bg-[#07101f]/80 px-3.5 py-1.5 font-mono text-[10px] tracking-[.15em] text-[#9df0f4] backdrop-blur-md flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"></span>
+                  <span>VERIFIED FREELANCER</span>
+                </div>
+
+                <div class="absolute bottom-5 left-6 right-6">
+                  <span class="display text-[22px] font-bold text-white tracking-tight">Saurabh Mondal</span>
+                  <p class="text-[12px] text-[#9db4cf] font-mono">Social Media Manager & AI Creator</p>
+                </div>
+              </div>
+
+              <!-- Rate Float Badge -->
+              <div class="absolute -bottom-4 -right-2 rounded-2xl border border-[#75e7f1]/30 bg-[#09172c] px-5 py-3.5 shadow-2xl backdrop-blur-md">
+                <p class="font-mono text-[9px] tracking-[.18em] text-[#8aa0be]">HOURLY RATE</p>
+                <p class="mt-0.5 text-[18px] font-bold text-[#77e7f2]">.00<span class="text-[11px] font-normal text-[#9eb5d0]">/hr</span></p>
+              </div>
+            </div>
+
+            <!-- Bio & Story -->
+            <div>
+              <p class="eyebrow">ABOUT ME Â· FREELANCE PROFESSIONAL</p>
+              <h2 class="section-title mt-4">
+                The creative mind<br>
+                <span class="text-[#8493aa]">behind your social growth.</span>
+              </h2>
+              
+              <div class="mt-6 space-y-4 text-[13px] leading-7 text-[#b5c5db]">
+                <p>
+                  I'm <strong>Saurabh Mondal</strong>, a freelance creative professional specializing in social media management, AI video & content creation, short-form reels, and graphic design.
+                </p>
+                <p>
+                  I work with brands, businesses, creators, and agencies across multiple industries. My philosophy is simple: <strong class="text-white">every piece of content must have a clear purpose, not just random posting.</strong>
+                </p>
+                <p>
+                  Whether you are a startup looking to find your initial audience, a local business driving footfall, an e-commerce brand scaling conversions, or a personal brand building thought leadership â€” I turn your social channels into a dependable growth engine.
+                </p>
+              </div>
+
+              <!-- Stats Pill Bar -->
+              <div class="mt-8 grid grid-cols-3 gap-3 border-y border-white/10 py-5 text-center">
+                <div>
+                  <div class="text-[20px] font-bold text-white font-mono">.00</div>
+                  <div class="text-[10px] tracking-wider text-[#7990b0] uppercase">Hourly Rate</div>
+                </div>
+                <div>
+                  <div class="text-[20px] font-bold text-white font-mono">10+</div>
+                  <div class="text-[10px] tracking-wider text-[#7990b0] uppercase">Niches Covered</div>
+                </div>
+                <div>
+                  <div class="text-[20px] font-bold text-white font-mono">100%</div>
+                  <div class="text-[10px] tracking-wider text-[#7990b0] uppercase">Client Focus</div>
+                </div>
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#contact" class="button-primary">
+                  HIRE ME FOR .00/HR <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+                <a href="#work" class="button-quiet">
+                  VIEW FULL PORTFOLIO
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================== CONTACT / HIRE SECTION ==================== -->
+        <section id="contact" class="relative overflow-hidden py-20 md:py-28">
+          <div class="absolute -right-32 top-20 h-[450px] w-[450px] rounded-full bg-blue-500/[.08] blur-[100px] pointer-events-none"></div>
+          
+          <div class="shell relative">
+            <div class="max-w-[700px]">
+              <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+              <h2 class="section-title mt-4">
+                Letâ€™s create content that<br>
+                <span class="text-[#80e8f1]">gets attention and drives growth. ðŸš€</span>
+              </h2>
+              <p class="mt-4 text-[13px] leading-6 text-[#9ab0cd]">
+                Tell me what you are building, and let's craft a tailored social media or video solution for your business. Available at <strong class="text-white">.00/hr</strong> or per-project pricing.
+              </p>
+            </div>
+
+            <div class="mt-12 grid gap-8 md:grid-cols-[1.3fr_.7fr] md:gap-12">
+              
+              <!-- Contact Form -->
+              <form id="contactForm" class="rounded-[22px] border border-white/10 bg-[#0b172a]/80 p-6 md:p-8 backdrop-blur-xl">
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <label class="text-[11px] font-semibold text-[#aab8cc]">
+                    Your Name <span class="text-[#7de7f1]">*</span>
+                    <input id="contactName" class="input-field mt-2" required placeholder="Your name or company" name="name">
+                  </label>
+                  <label class="text-[11px] font-semibold text-[#aab8cc]">
+                    Email Address <span class="text-[#7de7f1]">*</span>
+                    <input id="contactEmail" class="input-field mt-2" required type="email" placeholder="you@company.com" name="email">
+                  </label>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2 mt-5">
+                  <label class="block text-[11px] font-semibold text-[#aab8cc]">
+                    What Niche / Industry?
+                    <select id="contactNiche" class="input-field mt-2">
+                      <option selected>E-Commerce & Fashion</option>
+                      <option>AI Video & PPC Ads</option>
+                      <option>Real Estate & Interior</option>
+                      <option>Medical & Med Spa</option>
+                      <option>Fitness & Gym</option>
+                      <option>Food & Restaurants</option>
+                      <option>Podcasts & Personal Brand</option>
+                      <option>Travel & Lifestyle</option>
+                      <option>Pet Care</option>
+                      <option>Other Niche</option>
+                    </select>
+                  </label>
+
+                  <label class="block text-[11px] font-semibold text-[#aab8cc]">
+                    Primary Service Needed?
+                    <select id="contactService" class="input-field mt-2">
+                      <option selected>Short-Form Video (Reels/TikTok)</option>
+                      <option>AI Content & Video Ads</option>
+                      <option>Full Social Media Management (/hr)</option>
+                      <option>Social Graphics & Carousels</option>
+                      <option>Podcast Repurposing</option>
+                      <option>Copywriting & Strategy</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label class="mt-5 block text-[11px] font-semibold text-[#aab8cc]">
+                  Project Details & Goals <span class="text-[#7de7f1]">*</span>
+                  <textarea id="contactMessage" required rows="4" class="input-field mt-2 resize-y" placeholder="Tell me about your brand, what content you need, and your target timeline..."></textarea>
+                </label>
+
+                <button class="button-primary mt-6 w-full" type="submit">
+                  SEND PROJECT BRIEF <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                </button>
+                <p class="mt-3 text-center text-[10px] text-[#71819a]">Prepares a direct email to Saurabh. Fast reply within 24 hours.</p>
+              </form>
+
+              <!-- Direct Information Sidebar -->
+              <aside class="flex flex-col justify-between gap-6">
+                <div>
+                  <p class="eyebrow">DIRECT CONTACT</p>
+                  
+                  <div class="mt-4 space-y-3">
+                    <a href="mailto:hello@saurabhmondal.com" class="group flex items-center justify-between border-b border-white/10 py-3 text-[13px] text-[#dbe5f3] transition hover:text-[#7de7f1]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#76e5ef]"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        hello@saurabhmondal.com
+                      </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#7588a4] group-hover:text-[#7de7f1]"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                    </a>
+
+                    <div class="flex items-center justify-between border-b border-white/10 py-3 text-[13px] text-[#dbe5f3]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#76e5ef]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Rate
+                      </span>
+                      <span class="font-bold text-[#77e7f2] font-mono">.00 / Hour</span>
+                    </div>
+
+                    <div class="flex items-center justify-between border-b border-white/10 py-3 text-[13px] text-[#dbe5f3]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#76e5ef]"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Availability
+                      </span>
+                      <span class="text-emerald-400 font-semibold flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Open Now</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Callout Box -->
+                <div class="rounded-2xl border border-white/[.08] bg-[#0b172a]/60 p-6">
+                  <p class="font-mono text-[9px] tracking-[.2em] text-[#7f91ac]">SPECIALIZATION</p>
+                  <p class="display mt-2 text-[17px] font-semibold text-[#e6edf8]">
+                    High-Retention Reels.<br>
+                    Authentic Social Growth.
+                  </p>
+                  <p class="mt-2 text-[11px] text-[#869cb6] leading-relaxed">
+                    Every project is crafted with your specific target audience and retention metrics in mind.
+                  </p>
+                </div>
+              </aside>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ==================== FOOTER ==================== -->
+      <footer class="border-t border-white/[.07] py-8 bg-[#050b17]">
+        <div class="shell flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div class="flex items-center gap-3">
+            <span class="display text-[12px] font-bold tracking-[.12em] text-[#cad6e8]">SAURABH MONDAL<span class="text-[#77e7f1]">.</span></span>
+            <span class="text-[11px] text-[#6f7f97]">Â· Social Media Manager | AI Video & Reels (/hr)</span>
+          </div>
+          <p class="text-[11px] text-[#6f7f97]">Â© 2026 Saurabh Mondal. Ideas in motion.</p>
+          <a href="#top" class="inline-flex items-center gap-1.5 text-[11px] text-[#90a0b8] hover:text-[#7de7f1]">
+            BACK TO TOP <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="rotate-180"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+          </a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ==================== VIDEO MODAL ==================== -->
+  <div id="videoModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="flex items-center justify-between border-b border-white/10 px-6 py-4">
+        <div>
+          <span id="modalNicheBadge" class="font-mono text-[9px] font-semibold tracking-wider text-[#7ce6ef] uppercase">NICHE REEL</span>
+          <h3 id="modalTitle" class="text-[18px] font-bold text-white">Video Title</h3>
+        </div>
+        <button id="closeVideoModal" type="button" class="grid h-9 w-9 place-items-center rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white" aria-label="Close video modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-6">
+        <div class="relative aspect-video max-h-[62vh] w-full overflow-hidden rounded-xl bg-black">
+          <video id="modalVideoPlayer" class="h-full w-full object-contain" controls autoplay playsinline></video>
+        </div>
+        <div class="mt-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p id="modalDesc" class="text-[12px] leading-relaxed text-[#a4b6cf] max-w-xl"></p>
+          <a href="#contact" class="button-primary shrink-0 py-2.5 px-5 text-[11px]" onclick="closeVideoModalFunc()">
+            HIRE FOR THIS STYLE (/HR)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DESIGN LIGHTBOX MODAL ==================== -->
+  <div id="posterModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card max-w-[680px]">
+      <div class="flex items-center justify-between border-b border-white/10 px-6 py-4">
+        <h3 id="posterModalTitle" class="text-[16px] font-bold text-white">Design Showcase</h3>
+        <button id="closePosterModal" type="button" class="grid h-9 w-9 place-items-center rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6">
+        <div class="overflow-hidden rounded-xl bg-[#030814] flex items-center justify-center max-h-[70vh]">
+          <img id="posterModalImg" src="" alt="Poster preview" class="max-h-[68vh] w-auto object-contain">
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="text-[11px] text-[#869db8]">Created by Saurabh Mondal</span>
+          <a href="#contact" class="button-quiet py-2 px-4 text-[10px]" onclick="closePosterModalFunc()">Request Custom Graphics (/hr)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // 2. Portfolio Niche Filtering
+    const nicheTabs = document.querySelectorAll('.niche-tab');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    let currentNiche = 'all';
+    let currentType = 'all'; // 'all', 'video', 'design'
+
+    function filterPortfolio() {
+      portfolioItems.forEach(item => {
+        const itemNiche = item.getAttribute('data-niche');
+        const itemType = item.getAttribute('data-type');
+
+        const matchesNiche = (currentNiche === 'all' || itemNiche === currentNiche);
+        const matchesType = (currentType === 'all' || itemType === currentType);
+
+        if (matchesNiche && matchesType) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    nicheTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        nicheTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentNiche = tab.getAttribute('data-niche');
+        filterPortfolio();
+      });
+    });
+
+    // View Switcher (All / Video / Design)
+    const btnAll = document.getElementById('filterTypeAll');
+    const btnVideos = document.getElementById('filterTypeVideos');
+    const btnDesigns = document.getElementById('filterTypeDesigns');
+
+    function setActiveTypeButton(activeBtn) {
+      [btnAll, btnVideos, btnDesigns].forEach(btn => {
+        if (btn) {
+          btn.className = "rounded-full px-4 py-1.5 transition text-[#8fa2bc] hover:text-white";
+        }
+      });
+      if (activeBtn) {
+        activeBtn.className = "rounded-full px-4 py-1.5 transition bg-cyan-400/20 text-[#a7f4f4]";
+      }
+    }
+
+    if (btnAll) {
+      btnAll.addEventListener('click', () => {
+        currentType = 'all';
+        setActiveTypeButton(btnAll);
+        filterPortfolio();
+      });
+    }
+    if (btnVideos) {
+      btnVideos.addEventListener('click', () => {
+        currentType = 'video';
+        setActiveTypeButton(btnVideos);
+        filterPortfolio();
+      });
+    }
+    if (btnDesigns) {
+      btnDesigns.addEventListener('click', () => {
+        currentType = 'design';
+        setActiveTypeButton(btnDesigns);
+        filterPortfolio();
+      });
+    }
+
+    // 3. Video Modal Logic
+    const videoModal = document.getElementById('videoModal');
+    const modalVideoPlayer = document.getElementById('modalVideoPlayer');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalNicheBadge = document.getElementById('modalNicheBadge');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeVideoModal = document.getElementById('closeVideoModal');
+
+    document.querySelectorAll('.play-video-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const videoSrc = btn.getAttribute('data-video');
+        const title = btn.getAttribute('data-title');
+        const niche = btn.getAttribute('data-niche');
+        const desc = btn.getAttribute('data-desc');
+
+        modalVideoPlayer.src = videoSrc;
+        modalTitle.textContent = title;
+        modalNicheBadge.textContent = niche;
+        modalDesc.textContent = desc;
+
+        videoModal.classList.add('active');
+        videoModal.setAttribute('aria-hidden', 'false');
+        modalVideoPlayer.play().catch(() => {});
+      });
+    });
+
+    function closeVideoModalFunc() {
+      videoModal.classList.remove('active');
+      videoModal.setAttribute('aria-hidden', 'true');
+      modalVideoPlayer.pause();
+      modalVideoPlayer.src = '';
+    }
+
+    if (closeVideoModal) closeVideoModal.addEventListener('click', closeVideoModalFunc);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeVideoModalFunc();
+    });
+
+    // 4. Design Lightbox Logic
+    const posterModal = document.getElementById('posterModal');
+    const posterModalImg = document.getElementById('posterModalImg');
+    const posterModalTitle = document.getElementById('posterModalTitle');
+    const closePosterModal = document.getElementById('closePosterModal');
+
+    document.querySelectorAll('.view-poster-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const imgSrc = btn.getAttribute('data-img');
+        const title = btn.getAttribute('data-title');
+
+        posterModalImg.src = imgSrc;
+        posterModalTitle.textContent = title;
+        posterModal.classList.add('active');
+        posterModal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closePosterModalFunc() {
+      posterModal.classList.remove('active');
+      posterModal.setAttribute('aria-hidden', 'true');
+      posterModalImg.src = '';
+    }
+
+    if (closePosterModal) closePosterModal.addEventListener('click', closePosterModalFunc);
+    posterModal.addEventListener('click', (e) => {
+      if (e.target === posterModal) closePosterModalFunc();
+    });
+
+    // Escape Key Handler for all modals
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideoModalFunc();
+        closePosterModalFunc();
+      }
+    });
+
+    // 5. Contact Form to Email Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const niche = document.getElementById('contactNiche').value;
+        const service = document.getElementById('contactService').value;
+        const msg = document.getElementById('contactMessage').value;
+
+        const subject = encodeURIComponent(Project Inquiry (/hr) -  []);
+        const body = encodeURIComponent(
+          Hi Saurabh,\n\nI came across your portfolio and would like to collaborate.\n\n +
+          Name: \n +
+          Email: \n +
+          Niche / Industry: \n +
+          Service Needed: \n\n +
+          Project Details:\n\n\n +
+          Looking forward to hearing from you!
+        );
+
+        window.location.href = mailto:hello@saurabhmondal.com?subject=&body=;
+      });
+    }
+  </script>
+</body>
+</html>
